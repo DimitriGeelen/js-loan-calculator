@@ -45,6 +45,25 @@ install_dependencies() {
     fi
 }
 
+# Function to get local IP address (most common external one)
+get_local_ip() {
+    # Try to get IP address - different methods for different systems
+    if command -v ip &> /dev/null; then
+        # For Linux with ip command
+        IP=$(ip route get 1 | sed -n 's/^.*src \([0-9.]*\) .*$/\1/p')
+    elif command -v ifconfig &> /dev/null; then
+        # For macOS or Linux with ifconfig
+        # Get first active non-loopback interface
+        INTERFACE=$(ifconfig | grep -B1 "inet " | grep -v "127.0.0.1" | head -n1 | cut -d: -f1)
+        IP=$(ifconfig $INTERFACE | grep "inet " | awk '{print $2}')
+    else
+        # If all fails
+        IP="your-ip-address"
+    fi
+    
+    echo $IP
+}
+
 start_server() {
     # Check if port parameter is provided
     if [ -z "$1" ]; then
@@ -54,7 +73,9 @@ start_server() {
     fi
     
     echo -e "${YELLOW}Starting the web server on port $PORT...${NC}"
-    echo -e "${GREEN}Web server is running at http://localhost:$PORT/${NC}"
+    
+    # IP address information will now be shown by the server.js script
+    echo -e "${BLUE}Server will display access URLs when it starts${NC}"
     echo -e "${BLUE}Press Ctrl+C to stop the server${NC}"
     
     # Start the server
