@@ -5,6 +5,7 @@
 * [Project Status](#project-status)
 * [Features](#features)
 * [Web Server Setup](#web-server-setup)
+* [Installation Scripts](#installation-scripts)
 * [Screenshots](#screenshots)
 * [Technologies](#technologies)
 * [Inspirations](#inspirations)
@@ -21,6 +22,7 @@ Complete:
 * Calculates and displays the results for monthly payment, total payment, and total interest
 * An error message displays if the input is invalid
 * Simple web server to serve the application
+* Installation scripts for Linux/Mac and Windows
 
 ## Web Server Setup
 This application includes a simple web server to serve the loan calculator without modifying the HTML files.
@@ -53,6 +55,35 @@ npm run dev
    - Custom port: http://localhost:[PORT]
 
 5. Press Ctrl+C in the terminal to stop the server
+
+## Installation Scripts
+The repository includes installation scripts for both Unix-based systems (Linux/Mac) and Windows to make the setup process easier.
+
+### For Linux/Mac Users
+```bash
+# Make the script executable
+chmod +x install.sh
+
+# Run with default port (8000)
+./install.sh
+
+# Or specify a custom port
+./install.sh 3000
+```
+
+### For Windows Users
+```cmd
+# Run with default port (8000)
+install.bat
+
+# Or specify a custom port
+install.bat 3000
+```
+
+These scripts will:
+1. Check if Node.js is installed
+2. Install the required dependencies
+3. Start the web server on the specified port
 
 ## Screenshots
 ![Screenshot of Loan Calculator](./images/loan-calc.png)
