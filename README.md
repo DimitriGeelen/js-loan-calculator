@@ -4,6 +4,8 @@
 ## Table of Contents
 * [Project Status](#project-status)
 * [Features](#features)
+* [System Requirements](#system-requirements)
+* [Ubuntu Setup](#ubuntu-setup)
 * [Web Server Setup](#web-server-setup)
 * [Installation Scripts](#installation-scripts)
 * [Screenshots](#screenshots)
@@ -23,17 +25,47 @@ Complete:
 * An error message displays if the input is invalid
 * Simple web server to serve the application
 * Installation scripts for Linux/Mac and Windows
+* Ubuntu setup script for fresh installations
+
+## System Requirements
+* Node.js (v12 or higher)
+* npm (comes with Node.js)
+* Git (for cloning the repository)
+
+## Ubuntu Setup
+For users with a fresh Ubuntu installation, we provide a setup script that installs all the required software:
+
+```bash
+# Download the setup script
+wget https://raw.githubusercontent.com/DimitriGeelen/js-loan-calculator/master/setup_ubuntu.sh
+
+# Make it executable
+chmod +x setup_ubuntu.sh
+
+# Run it with sudo
+sudo ./setup_ubuntu.sh
+```
+
+This script will:
+1. Update your system package lists
+2. Install curl and git
+3. Install Node.js and npm
+4. Verify the installations
+5. Provide instructions for next steps
+
+After running the script, you can proceed with cloning the repository and running the web server as described below.
 
 ## Web Server Setup
 This application includes a simple web server to serve the loan calculator without modifying the HTML files.
 
-### Prerequisites
-- Node.js installed on your system
-
 ### Running the Web Server
 1. Clone this repository
-2. Navigate to the project directory in your terminal
-3. Run the server using one of the following methods:
+```bash
+git clone https://github.com/DimitriGeelen/js-loan-calculator.git
+cd js-loan-calculator
+```
+
+2. Run the server using one of the following methods:
 
 ```bash
 # Method 1: Using Node directly (default port 8000)
@@ -50,11 +82,11 @@ npm start    # Runs on port 8000
 npm run dev
 ```
 
-4. Open your browser and navigate to:
+3. Open your browser and navigate to:
    - Default: http://localhost:8000
    - Custom port: http://localhost:[PORT]
 
-5. Press Ctrl+C in the terminal to stop the server
+4. Press Ctrl+C in the terminal to stop the server
 
 ## Installation Scripts
 The repository includes installation scripts for both Unix-based systems (Linux/Mac) and Windows to make the setup process easier.
