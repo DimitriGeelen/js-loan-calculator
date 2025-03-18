@@ -74,7 +74,7 @@ EXIT /B 0
 SET PORT=%~1
 ECHO.
 CALL :colorEcho %YELLOW% "Starting the web server on port %PORT%..."
-CALL :colorEcho %GREEN% "Web server is running at http://localhost:%PORT%/"
+CALL :colorEcho %BLUE% "Server will display access URLs when it starts"
 CALL :colorEcho %BLUE% "Press Ctrl+C to stop the server"
 ECHO.
 
