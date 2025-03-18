@@ -1,0 +1,25 @@
+{
+  "name": "js-loan-calculator",
+  "version": "1.0.0",
+  "description": "A loan calculator built with JavaScript",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js 3000"
+  },
+  "keywords": [
+    "loan",
+    "calculator",
+    "javascript"
+  ],
+  "author": "Original: CBStanley12, Modified: DimitriGeelen",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DimitriGeelen/js-loan-calculator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DimitriGeelen/js-loan-calculator/issues"
+  },
+  "homepage": "https://github.com/DimitriGeelen/js-loan-calculator#readme"
+}
