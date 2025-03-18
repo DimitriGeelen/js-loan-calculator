@@ -7,6 +7,7 @@
 * [System Requirements](#system-requirements)
 * [Ubuntu Setup](#ubuntu-setup)
 * [Web Server Setup](#web-server-setup)
+* [LAN Access](#lan-access)
 * [Installation Scripts](#installation-scripts)
 * [Screenshots](#screenshots)
 * [Technologies](#technologies)
@@ -26,6 +27,7 @@ Complete:
 * Simple web server to serve the application
 * Installation scripts for Linux/Mac and Windows
 * Ubuntu setup script for fresh installations
+* LAN access for multiple devices on the same network
 
 ## System Requirements
 * Node.js (v12 or higher)
@@ -87,6 +89,26 @@ npm run dev
    - Custom port: http://localhost:[PORT]
 
 4. Press Ctrl+C in the terminal to stop the server
+
+## LAN Access
+The web server is configured to be accessible from other devices on your local network:
+
+1. When the server starts, it will display a list of URLs with your machine's IP addresses
+2. From another device on the same network (phone, tablet, laptop, etc.), open a browser and enter:
+   ```
+   http://YOUR_IP_ADDRESS:8000
+   ```
+   (Replace YOUR_IP_ADDRESS with the actual IP address displayed when the server starts)
+
+3. Make sure your firewall settings allow connections on the port you're using (8000 by default)
+
+### Troubleshooting LAN Access
+- If devices can't connect, check your firewall settings
+- For Ubuntu users, you might need to allow the port:
+  ```bash
+  sudo ufw allow 8000/tcp
+  ```
+- For Windows users, check Windows Firewall settings to allow the connection
 
 ## Installation Scripts
 The repository includes installation scripts for both Unix-based systems (Linux/Mac) and Windows to make the setup process easier.
